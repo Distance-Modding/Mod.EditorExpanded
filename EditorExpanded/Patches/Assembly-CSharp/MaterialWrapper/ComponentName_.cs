@@ -9,7 +9,7 @@ namespace EditorExpanded.Patches
         [HarmonyPostfix]
         internal static void Postfix(ref string __result, MaterialWrapper __instance)
         {
-            if (Mod.EnableSubMaterials.Value)
+            if (Mod.EnableSubTextures.Value)
             {
                 __result = "Material: " + (__instance.matInfo_.matName_ + __instance.materialIndex_).Colorize(Colors.GreenColors.seaGreen);
             }

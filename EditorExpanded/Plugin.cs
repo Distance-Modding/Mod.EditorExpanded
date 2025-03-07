@@ -28,11 +28,12 @@ namespace EditorExpanded
         public static string HiddenFolderKey = "Enable Hidden Folder";
         public static string UnlimitedComponentKey = "Unlimited Add Component";
         public static string AllChangeTrackKey = "Change Track Type Includes All Splines";
-        public static string SubMaterialKey = "Enable Sub Materials";
+        public static string SubTextureKey = "Enable Sub Materials";
         public static string EditorPrecisionKey = "Decimal Precision";
         public static string CursorBackgroundKey = "Cursor Ignores Background Layer";
         public static string EnableHiddenComponentKey = "Enable Hidden Components";
         public static string RemoveCreatorKey = "Remove Level Creator Field";
+        public static string EnableAllModesKey = "Enable All Modes";
 
         //Config Entries
         public static ConfigEntry<bool> DevFolderEnabled { get; set; }
@@ -47,11 +48,12 @@ namespace EditorExpanded
         public static ConfigEntry<bool> HiddenFolderEnabled { get; set; }
         public static ConfigEntry<bool> UnlimitedAddComponent { get; set; }
         public static ConfigEntry<bool> IncludeAllSplinesInChangeTrackType { get; set; }
-        public static ConfigEntry<bool> EnableSubMaterials { get; set; }
+        public static ConfigEntry<bool> EnableSubTextures { get; set; }
         public static ConfigEntry<int> EditorDecimalPrecision { get; set; }
         public static ConfigEntry<bool> CursorIgnoresBackground { get; set; }
         public static ConfigEntry<bool> EnableHiddenComponent { get; set; }
         public static ConfigEntry<bool> RemoveCreatorField { get; set; }
+        public static ConfigEntry<bool> EnableAllModes { get; set; }
 
         //Public Variables
         public static bool DevMode => IsCommandLineSwitchPresent("-dev");
@@ -112,10 +114,10 @@ namespace EditorExpanded
                 true,
                 new ConfigDescription("All splines are now included in the Change Track Type tool"));
 
-            EnableSubMaterials = Config.Bind<bool>("General",
-                SubMaterialKey,
+            EnableSubTextures = Config.Bind<bool>("General",
+                SubTextureKey,
                 false,
-                new ConfigDescription("Now displays sub materials in the properties menu for objects. This is good for coloring individual parts of an object you couldn't before."));
+                new ConfigDescription("Now displays sub textures in the properties menu for objects. This is good for coloring individual parts of an object you couldn't before."));
 
             CursorIgnoresBackground = Config.Bind<bool>("General",
                 CursorBackgroundKey,
@@ -157,6 +159,11 @@ namespace EditorExpanded
                 MultipleCarKey,
                 false,
                 new ConfigDescription("Allows the use of multiple Level Editor Car Spawners as well as multiple Tag Bubbles. The extra ones are unused by the game if placed."));
+
+            EnableAllModes = Config.Bind<bool>("General",
+                EnableAllModesKey,
+                false,
+                new ConfigDescription("Allows all modes to be visible in the Level Settings menu. Modes outside of Sprint, Challenge, Stunt, Reverse Tag, and Trackmogrify are unplayable. \nIt might be a good idea to keep this disabled."));
 
             HiddenFolderEnabled = Config.Bind<bool>("General",
                 HiddenFolderKey,
