@@ -69,6 +69,7 @@
     <Compile Include="KeyboardShortcut.cs" />
     <Compile Include="MessageBox.cs" />
     <Compile Include="Patches\Assembly-CSharp\DontInspectComponentsSet\ShouldBeIgnored.cs" />
+    <Compile Include="Patches\Assembly-CSharp\GameManager\GetModeShowInLevelEditor.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatedComponentTool\ValidateObject.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorAudioComponentTool\ValidateObject.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorCameraShakeComponentTool\ValidateObject.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Patches\Assembly-CSharp\LevelEditorMusicTrackSelectMenuLogic\GenerateMusicNameList.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditor\SelectObject.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditor\UpdateOutlines.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelSettings\GetDefaultModesMap.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelSettings\MedalTimeSpanToString.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelSettings\MedalTimeSpanTryParse.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelSettings\NGUIVisitMedalTime.cs" />
