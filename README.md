@@ -5,7 +5,7 @@
  - Editor Additions (Created by REHERC)
  - Editor Annihilator (Created by Predatory Balloon)
  - Group Centerpoint Mover (Created by Predatory Balloon)
-   <br>
+
 This mod aims to remove all bugs known with using these mods while also introducing more toggles for more customization. This mod only aims to port the other editor mods, nothing more.
 
 # List of Features (* are toggleable)
