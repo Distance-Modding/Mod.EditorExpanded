@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5276705-FC20-4B5D-B06A-173F5528845C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EditorExpanded</RootNamespace>
+    <AssemblyName>EditorExpanded</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Distance\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Desktop\publicized_assemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Distance\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.Unity\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Distance\Distance_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EditorTools.cs" />
+    <Compile Include="EditorUtil.cs" />
+    <Compile Include="Editor\Tools\Quickselect\Generated\Quickselect.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Quickselect.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Tools\Quickselect\LoadSelectionToolBase.cs" />
+    <Compile Include="Editor\Tools\Quickselect\SaveSelectionToolBase.cs" />
+    <Compile Include="Extension\Assembly-CSharp\LevelEditor.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="KeyboardShortcut.cs" />
+    <Compile Include="MessageBox.cs" />
+    <Compile Include="Patches\Assembly-CSharp\DontInspectComponentsSet\ShouldBeIgnored.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatedComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorAudioComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorCameraShakeComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddComponentTool\Run.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddEngageBrokenPiecesComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddExcludeFromEMPComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddFadeOutComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddGoldenAnimatorComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddIgnoreInCullGroupsComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddLookAtCameraComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddPulseAllComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddSetActiveAfterWarpComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddShowDuringGlitchComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddTurnLightOnNearCarComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddZEventListenerComponentTool\ValidateObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\ChangeLayerTool\OnSelectLayer.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\ChangeTrackTypeTool\Start.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\CreateCustomObjectTool\Start.cs" />
+    <Compile Include="Patches\Assembly-CSharp\CreditsNameOrbLogic\Visit.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\DeleteTool\Run.cs" />
+    <Compile Include="Patches\Assembly-CSharp\GameManager\GetModeCheckRequirements.cs" />
+    <Compile Include="Patches\Assembly-CSharp\GameManager\IsDevBuild.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\GenerateTrackmogrifyLevelTool\Finish.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\GroupTool\Run.cs" />
+    <Compile Include="Patches\Assembly-CSharp\Group\Visit.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorCarSpawner\LevelEditorStartVirtual.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorLevelNameSelectMenuLogic\GenerateLevelNameList.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorMusicTrackSelectMenuLogic\GenerateMusicNameList.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditor\SelectObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditor\UpdateOutlines.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelSettings\MedalTimeSpanToString.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelSettings\MedalTimeSpanTryParse.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelSettings\NGUIVisitMedalTime.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelSettings\Visit.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LibraryTab\Start.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\LoadLevelTool\Update.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\NewLevelTool\CreateNewLevel.cs" />
+    <Compile Include="Patches\Assembly-CSharp\MaterialWrapper\ComponentName_.cs" />
+    <Compile Include="Patches\Assembly-CSharp\MaterialWrapper\MaterialName_.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\MoveCursorTool\Run.cs" />
+    <Compile Include="Patches\Assembly-CSharp\NGUIFloatInspector\AddOptions.cs" />
+    <Compile Include="Patches\Assembly-CSharp\NGUIIntInspector\AddOptions.cs" />
+    <Compile Include="Patches\Assembly-CSharp\NGUIObjectInspectorTabAbstract\CreateComponentInspectorsOnObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\NGUIVector3Inspector\AddOptions.cs" />
+    <Compile Include="Patches\Assembly-CSharp\Options\Format.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\QuitToMainMenuTool\Finish.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\RemoveComponentTool\Run.cs" />
+    <Compile Include="Patches\Assembly-CSharp\ResourceManager\LevelPrefabFileInfosRoot_.cs" />
+    <Compile Include="Patches\Assembly-CSharp\ResourceManager\SetupPrefabFileDatas.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\SaveTool\SortMedalRequirements.cs" />
+    <Compile Include="Patches\Assembly-CSharp\SelectionGroupData\ctor.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\SelectMusicTrackNameFromListTool\AddEntries.cs" />
+    <Compile Include="Patches\Assembly-CSharp\StuntBubbleLogic\Awake.cs" />
+    <Compile Include="Patches\Assembly-CSharp\StuntCollectibleLogic\Awake.cs" />
+    <Compile Include="Patches\Assembly-CSharp\TrackManipulatorNode\SetColorAndMesh.cs" />
+    <Compile Include="Patches\Assembly-CSharp\TransformWrapper\Visit.cs" />
+    <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\ConvertStringToValue.cs" />
+    <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\Max.cs" />
+    <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\Min.cs" />
+    <Compile Include="Patches\Assembly-CSharp\UIExNumericInput\ConvertValueToString.cs" />
+    <Compile Include="Patches\Assembly-CSharp\UIExNumericInput\ValidateValue.cs" />
+    <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\UngroupTool\Run.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrackNodeColors.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Editor\Tools\Quickselect\Generated\Quickselect.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Quickselect.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
