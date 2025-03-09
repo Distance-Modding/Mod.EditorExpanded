@@ -28,6 +28,12 @@ namespace EditorExpanded.Patches
 				__instance.CreateISerializableInspector(group, objectSupportsUndo);
 			}
 
+			//Part of Centrifuge's patches for the Editor Inspector Tab
+			if (group && group.gameObject.GetChildren().Length == 0)
+			{
+				group.inspectChildren_ = Group.InspectChildrenType.None;
+			}
+
 			if (can_inspect_mateirals)
 			{
 				__instance.CreateMaterialWrappers(obj.EncapsulateInArray(), ignoreList, objectSupportsUndo);

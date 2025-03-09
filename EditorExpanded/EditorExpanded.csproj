@@ -64,12 +64,16 @@
     </Compile>
     <Compile Include="Editor\Tools\Quickselect\LoadSelectionToolBase.cs" />
     <Compile Include="Editor\Tools\Quickselect\SaveSelectionToolBase.cs" />
+    <Compile Include="Editor\Tools\TrackAttachToTrack\TrackToTrackButton.cs" />
+    <Compile Include="Editor\Tools\TrackAttachToTrack\TrackToTrackButtonS.cs" />
     <Compile Include="Extension\Assembly-CSharp\LevelEditor.cs" />
+    <Compile Include="Extension\mscorlib\System\Type.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="KeyboardShortcut.cs" />
     <Compile Include="MessageBox.cs" />
     <Compile Include="Patches\Assembly-CSharp\DontInspectComponentsSet\ShouldBeIgnored.cs" />
     <Compile Include="Patches\Assembly-CSharp\GameManager\GetModeShowInLevelEditor.cs" />
+    <Compile Include="Patches\Assembly-CSharp\GUtils\GetExportedTypesOfType.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatedComponentTool\ValidateObject.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorAudioComponentTool\ValidateObject.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\AddAnimatorCameraShakeComponentTool\ValidateObject.cs" />
@@ -114,6 +118,7 @@
     <Compile Include="Patches\Assembly-CSharp\NGUIFloatInspector\AddOptions.cs" />
     <Compile Include="Patches\Assembly-CSharp\NGUIIntInspector\AddOptions.cs" />
     <Compile Include="Patches\Assembly-CSharp\NGUIObjectInspectorTabAbstract\CreateComponentInspectorsOnObject.cs" />
+    <Compile Include="Patches\Assembly-CSharp\NGUIObjectInspectorTabAbstract\CreateISerializableInspector.cs" />
     <Compile Include="Patches\Assembly-CSharp\NGUIVector3Inspector\AddOptions.cs" />
     <Compile Include="Patches\Assembly-CSharp\Options\Format.cs" />
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\QuitToMainMenuTool\Finish.cs" />
@@ -125,6 +130,7 @@
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\SelectMusicTrackNameFromListTool\AddEntries.cs" />
     <Compile Include="Patches\Assembly-CSharp\StuntBubbleLogic\Awake.cs" />
     <Compile Include="Patches\Assembly-CSharp\StuntCollectibleLogic\Awake.cs" />
+    <Compile Include="Patches\Assembly-CSharp\ToolInputCombos\Load.cs" />
     <Compile Include="Patches\Assembly-CSharp\TrackManipulatorNode\SetColorAndMesh.cs" />
     <Compile Include="Patches\Assembly-CSharp\TransformWrapper\Visit.cs" />
     <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\ConvertStringToValue.cs" />
@@ -136,6 +142,7 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackNodeColors.cs" />
+    <Compile Include="TypeExportManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Editor\Tools\Quickselect\Generated\Quickselect.tt">
