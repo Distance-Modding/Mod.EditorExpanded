@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Reflection;
 
 namespace EditorExpanded
@@ -18,7 +19,7 @@ namespace EditorExpanded
 
             if (!types_.ContainsKey(type))
             {
-                types_.Add(type, (_) => true);
+                types_.Add(type, null);
             }
         }
 
@@ -57,20 +58,12 @@ namespace EditorExpanded
         }
 
         internal static bool PerformTypeCheck(Type baseType, Type type)
+        => !types_.TryGetValue(baseType, out Func<Type, bool> validator)
+        || (validator?.Invoke(type) ?? true);
+
+        internal static IEnumerable<Type> GetTypesOfType(Type baseType)
         {
-            Func<Type, bool> validator = (_) => true;
-
-            if (types_.ContainsKey(baseType))
-            {
-                validator = types_[baseType];
-            }
-
-            return validator(type);
-        }
-
-        internal static List<Type> GetTypesOfType(Type baseType)
-        {
-            List<Type> result = new List<Type>();
+            IList<Type> result = new List<Type>();
 
             foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
@@ -78,7 +71,7 @@ namespace EditorExpanded
                 {
                     foreach (Type type in assembly.GetTypes())
                     {
-                        if (type.IsSubclassOf(baseType) && ValidateType(type) && PerformTypeCheck(baseType, type))
+                        if (baseType.IsAssignableFrom(type) && ValidateType(type) && PerformTypeCheck(baseType, type))
                         {
                             result.Add(type);
                         }
@@ -90,7 +83,7 @@ namespace EditorExpanded
                 }
             }
 
-            return result;
+            return new ReadOnlyCollection<Type>(result);
         }
 
         internal static bool ValidateType(Type type)
