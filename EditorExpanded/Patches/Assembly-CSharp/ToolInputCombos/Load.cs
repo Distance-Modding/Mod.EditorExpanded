@@ -42,7 +42,7 @@ namespace EditorExpanded.Patches
 
 			foreach (Type toolType in TypeExportManager.GetTypesOfType(typeof(LevelEditorTool)).Where(filterType))
 			{
-				if (GetToolInfo(toolType) is ToolInfo info && toolType.GetCustomAttribute<EditorToolAttribute>(false) is KeyboardShortcutAttribute attribute)
+				if (GetToolInfo(toolType) is ToolInfo info && toolType.GetCustomAttribute<KeyboardShortcutAttribute>(false) is KeyboardShortcutAttribute attribute)
 				{
 					__result.Add(attribute.Get(scheme).ToString(), info.Name_);
 				}

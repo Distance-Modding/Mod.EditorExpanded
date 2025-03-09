@@ -2,6 +2,7 @@
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using LevelEditorTools;
 using System;
 using System.Linq;
 
@@ -82,6 +83,7 @@ namespace EditorExpanded
             TrackNodeColors = TrackNodeColors.FromSettings("SplineColors.json");
             TrackNodeColors.OnFileReloaded += ReloadTrackNodeColors;
 
+            RegisterExportedTypes();
 
             //Config Setup
             DevFolderEnabled = Config.Bind<bool>("General",
@@ -188,6 +190,12 @@ namespace EditorExpanded
             SettingChangedEventArgs settingChangedEventArgs = e as SettingChangedEventArgs;
 
             if (settingChangedEventArgs == null) return;
+        }
+
+        private void RegisterExportedTypes()
+        {
+            TypeExportManager.Register<ISerializable>();
+            TypeExportManager.Register<LevelEditorTool>((type) => type.HasAttribute<EditorToolAttribute>());
         }
 
         private void ReloadTrackNodeColors(object sender, EventArgs e)
