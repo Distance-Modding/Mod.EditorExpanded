@@ -11,14 +11,14 @@ namespace EditorExpanded.Patches
         [HarmonyPostfix]
         internal static void Postfix(Type baseType, ref Type[] __result)
         {
-            List<Type> types = __result.ToList();
+            IEnumerable<Type> types = __result;
 
             if (TypeExportManager.Types.Contains(baseType))
             {
-                types.AddRange(TypeExportManager.GetTypesOfType(baseType));
+                types = types.Concat(TypeExportManager.GetTypesOfType(baseType));
             }
 
-            __result = types.ToArray();
+            __result = types.Distinct().ToArray();
         }
     }
 }
