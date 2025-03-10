@@ -14,7 +14,7 @@ namespace EditorExpanded
         //Mod Details
         private const string modGUID = "Distance.EditorExpanded";
         private const string modName = "Editor Expanded";
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "1.1.0";
 
         //Config Entry Strings
         public static string DevFolderKey = "Enable Dev Folder";

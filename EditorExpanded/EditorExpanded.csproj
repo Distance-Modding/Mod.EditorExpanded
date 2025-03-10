@@ -57,6 +57,13 @@
   <ItemGroup>
     <Compile Include="EditorTools.cs" />
     <Compile Include="EditorUtil.cs" />
+    <Compile Include="Editor\Tools\CubeToPlanes\CubeToPlaneAction.cs" />
+    <Compile Include="Editor\Tools\CubeToPlanes\CubeToPlaneTool.cs" />
+    <Compile Include="Editor\Tools\ObjectDivide\DivideAction.cs" />
+    <Compile Include="Editor\Tools\ObjectDivide\DividerTool.cs" />
+    <Compile Include="Editor\Tools\ObjectMerge\MergeAction.cs" />
+    <Compile Include="Editor\Tools\ObjectMerge\MergeTool.cs" />
+    <Compile Include="Editor\Tools\ObjHelper.cs" />
     <Compile Include="Editor\Tools\Quickselect\Generated\Quickselect.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

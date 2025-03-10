@@ -4,7 +4,7 @@ using LevelEditorTools;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EditorExpanded.Editor.Tools.TrackAttachToTrack
+namespace EditorExpanded.Editor.Tools
 {
     [EditorTool, KeyboardShortcut("SHIFT+ALT+A")]
     public class TrackAttachToTrackToolS : InstantTool
