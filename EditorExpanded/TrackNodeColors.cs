@@ -37,10 +37,9 @@ namespace EditorExpanded
 		public TrackNodeColors(FileInfo file)
 		{
 			this.file = file;
-			/* Not worrying about tracknodecolor stuff
+
 			MakeWatcher();
 			LoadData();
-			*/
 		}
 		#endregion
 
