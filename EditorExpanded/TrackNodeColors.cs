@@ -37,9 +37,10 @@ namespace EditorExpanded
 		public TrackNodeColors(FileInfo file)
 		{
 			this.file = file;
-
+			/* Not worrying about tracknodecolor stuff
 			MakeWatcher();
 			LoadData();
+			*/
 		}
 		#endregion
 
@@ -124,6 +125,7 @@ namespace EditorExpanded
 			// Making sure colors that copy from other are set properly
 			HashSet<string> toRemove = new HashSet<string>();
 			Dictionary<string, JsonColor> rewrite = new Dictionary<string, JsonColor>();
+
 			foreach (var item in data.spline_colors)
 			{
 				JsonColor color = item.Value;
