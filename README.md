@@ -5,6 +5,7 @@
  - Editor Additions (Created by REHERC)
  - Editor Annihilator (Created by Predatory Balloon)
  - Group Centerpoint Mover (Created by Predatory Balloon)
+ - ObjectDivider (Created by Predatory Balloon)
 
 This mod aims to remove all bugs known with using these mods while also introducing more toggles for more customization. This mod only aims to port the other editor mods, nothing more.
 
@@ -17,6 +18,11 @@ This mod aims to remove all bugs known with using these mods while also introduc
  - Saves the library tab zoom level preference (the game doesn't do that by default)
  - Removes number limits in the editor*
  - Adds an input field for position and rotation in the group component which, when changed, changes only the group centerpoint position and rotation.*
+ - Adds a Quickselect tool that allows you to save/load objects to/from memory (Check under the View tab in the editor)
+ - Adds a tool that allows you to attach a track to a track (be careful with the tool) (Shortcut <kbd>Ctrl+Shift+A</kbd> & <kbd>Shift+Alt+A</kbd>.)
+ - Adds a tool that subdivides simples. (Shortcut <kbd>Ctrl+Shift+D</kbd>.)
+ - Adds a tool that turns CubeGS into PlaneGS. (Shortcut <kbd>Shift+P</kbd>.)
+ - Adds a tool that merges objects. (Shortcut <kbd>Shift+K</kbd>.)
  - Medal times can be unbounded*
  - Level is savable no matter what. (Challenge mode can now have checkpoints, for example. Reverse tag with no reverse tag bubble, sprint with no end zone, ect.)*
  - All modes (Even hidden ones.).*
@@ -34,3 +40,4 @@ This mod aims to remove all bugs known with using these mods while also introduc
 # KNOWN ISSUES
  - Level Settings has a Transform field. (Editing these values do nothing, this should be hidden)
  - When changing the position of objects within a selected group, the outline glow may become misaligned.
+ - NullReference errors when the Divider Tool is used. The function still runs, it just prints some errors.
