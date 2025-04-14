@@ -14,7 +14,7 @@ namespace EditorExpanded
         //Mod Details
         private const string modGUID = "Distance.EditorExpanded";
         private const string modName = "Editor Expanded";
-        private const string modVersion = "1.1.0";
+        private const string modVersion = "1.1.2";
 
         //Config Entry Strings
         public static string DevFolderKey = "Enable Dev Folder";
@@ -63,7 +63,6 @@ namespace EditorExpanded
         {
             return Environment.GetCommandLineArgs().Select(arg => arg.ToLower()).Contains(item);
         }
-        public TrackNodeColors TrackNodeColors { get; set; }
 
         //Other
         private static readonly Harmony harmony = new Harmony(modGUID);
@@ -79,9 +78,6 @@ namespace EditorExpanded
 
             Log = BepInEx.Logging.Logger.CreateLogSource(modGUID);
             Logger.LogInfo("Thanks for using Editor Expanded!");
-
-            TrackNodeColors = TrackNodeColors.FromSettings("SplineColors.json");
-            TrackNodeColors.OnFileReloaded += ReloadTrackNodeColors;
 
             RegisterExportedTypes();
 

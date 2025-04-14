@@ -41,9 +41,6 @@
     <Reference Include="BepInEx">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Distance\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.Unity\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -138,7 +135,6 @@
     <Compile Include="Patches\Assembly-CSharp\StuntBubbleLogic\Awake.cs" />
     <Compile Include="Patches\Assembly-CSharp\StuntCollectibleLogic\Awake.cs" />
     <Compile Include="Patches\Assembly-CSharp\ToolInputCombos\Load.cs" />
-    <Compile Include="Patches\Assembly-CSharp\TrackManipulatorNode\SetColorAndMesh.cs" />
     <Compile Include="Patches\Assembly-CSharp\TransformWrapper\Visit.cs" />
     <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\ConvertStringToValue.cs" />
     <Compile Include="Patches\Assembly-CSharp\UIExGenericNumericInput\Max.cs" />
@@ -148,7 +144,6 @@
     <Compile Include="Patches\Assembly-CSharp\LevelEditorTools\UngroupTool\Run.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackNodeColors.cs" />
     <Compile Include="TypeExportManager.cs" />
   </ItemGroup>
   <ItemGroup>
